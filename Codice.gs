@@ -7,6 +7,9 @@ function doGet(req) {
   if (platform=="Twitter") {
     htmlProlog = "Su Twitter ci sono "+getTwitterFollowers()+" followers";
   }
+  if (platform=="Facebook") {
+    htmlProlog = getFacebookLikes()+" utenti Facebook seguono la pagina";
+  }
   let htmlOutput = HtmlService.createHtmlOutput(htmlProlog);
   htmlOutput.setSandboxMode(HtmlService.SandboxMode.IFRAME)
   htmlOutput.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.DEFAULT);
@@ -23,4 +26,12 @@ function getTwitterFollowers() {
 
 function getTelegramSubcribers() {
   return SpreadsheetApp.openById(SubscriberSpreadsheet).getSheetByName("Subscribers").getDataRange().getNumRows();
+}
+
+function getFacebookLikes() {
+  return (parseInt(readParams().getRange("B6").getValue()));
+}
+
+function getAllUsers() {
+  return getTelegramSubcribers()+getFacebookLikes()+getTwitterFollowers();
 }

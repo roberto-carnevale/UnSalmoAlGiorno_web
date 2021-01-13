@@ -1,5 +1,3 @@
-
-
 // //Google DB
 // const SubscriberSpreadsheet = 'XXX';
 // const SalmiDBSpreadsheet = "XXX"
