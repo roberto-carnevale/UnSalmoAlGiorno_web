@@ -17,7 +17,7 @@ SalmiOnGoogle.prototype.niceVerseForWeb = function() {
   let stringsHoly = "";
   if (dayObj.name) {dayName=dayObj.name;}
   if (dayObj.holy) {stringsHoly=stringsHoly[dayObj.holy];}
-  let htmlVerse = "Preghiamo "+stringsTempo[dayObj.tempo]+stringsHoly+dayName+"<br/><br/>";
+  let htmlVerse = "<font style='color:"+codeColor[dayObj.color]+"'><b>Oggi paramenti "+stringColor[dayObj.color]+"</b><br/></font>Preghiamo "+stringsTempo[dayObj.tempo]+stringsHoly+dayName+"<br/><br/>";
   htmlVerse += verseRaw[0][0]+","+verseRaw[0][2] + "<br/>" + verseRaw[0][3].toString().replace(/###/g,"<br/>");
   Logger.log(htmlVerse);
   return htmlVerse;

@@ -25,6 +25,26 @@ const dayColor= {
   A:EmojiRosary
 }
 
+const stringColor= {
+  G:"verdi",
+  V:"viola",
+  W:"bianchi",
+  R:"rossi",
+  S:"rosa",
+  B:"neri",
+  A:"azzurri",
+}
+
+const codeColor= {
+  G:"#008000",
+  V:"#8000FF",
+  W:"#FFD700",
+  R:"#A61022",
+  S:"#E75480",
+  B:"#FFFFFF",
+  A:"#ABCDEF",
+}
+
 const dayTempo = {
   A:EmojiCandle,
   Q:EmojiHolyCross,
