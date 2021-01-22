@@ -10,28 +10,14 @@ function doGet(req) {
   if (platform=="Facebook") {
     htmlProlog = getFacebookLikes()+" utenti Facebook seguono la pagina";
   }
+  if (platform=="Web") {
+    Logger.log("WWW");
+    let sog = new SalmiOnGoogle();
+    htmlProlog = sog.niceVerseForWeb();
+  }
   let htmlOutput = HtmlService.createHtmlOutput(htmlProlog);
   htmlOutput.setSandboxMode(HtmlService.SandboxMode.IFRAME)
   htmlOutput.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.DEFAULT);
   return htmlOutput;
 }
 
-function readParams() {
-  return SpreadsheetApp.openById(SubscriberSpreadsheet).getSheetByName(SubscriberParams);
-}
-
-function getTwitterFollowers() {
-  return (parseInt(readParams().getRange("B5").getValue()));
-}
-
-function getTelegramSubcribers() {
-  return SpreadsheetApp.openById(SubscriberSpreadsheet).getSheetByName("Subscribers").getDataRange().getNumRows();
-}
-
-function getFacebookLikes() {
-  return (parseInt(readParams().getRange("B6").getValue()));
-}
-
-function getAllUsers() {
-  return getTelegramSubcribers()+getFacebookLikes()+getTwitterFollowers();
-}
