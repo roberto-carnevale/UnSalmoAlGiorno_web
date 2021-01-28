@@ -21,3 +21,8 @@ function doGet(req) {
   return htmlOutput;
 }
 
+function test() {
+
+    let sog = new SalmiOnGoogle();
+    htmlProlog = sog.niceVerseForWeb();
+  }
