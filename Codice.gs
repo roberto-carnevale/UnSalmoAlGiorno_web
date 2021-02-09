@@ -11,18 +11,12 @@ function doGet(req) {
     htmlProlog = getFacebookLikes()+" utenti Facebook seguono la pagina";
   }
   if (platform=="Web") {
-    Logger.log("WWW");
-    let sog = new SalmiOnGoogle();
-    htmlProlog = sog.niceVerseForWeb();
+    let dayObj = getLiturgicDay();
+    htmlProlog = "<font style='color:"+codeColor[dayObj.color]+"'><b>"+stringColorMailingList[dayObj.color]+"</b></font><br/>"+getdayFull().toString().replace(/###/g,"<br/>")+"<br/>";
+    htmlProlog += lastVerseFull().toString().replace(/###/g,"<br/>");
   }
   let htmlOutput = HtmlService.createHtmlOutput(htmlProlog);
   htmlOutput.setSandboxMode(HtmlService.SandboxMode.IFRAME)
   htmlOutput.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.DEFAULT);
   return htmlOutput;
 }
-
-function test() {
-
-    let sog = new SalmiOnGoogle();
-    htmlProlog = sog.niceVerseForWeb();
-  }
