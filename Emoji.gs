@@ -52,5 +52,5 @@ const stringColorMailingList= {
   R:"Oggi paramenti rossi",
   S:"Oggi paramenti rosa",
   B:"Oggi paramenti neri",
-  A:"Oggi gioranta Mariana",
+  A:"Oggi preghiera Mariana",
 }
