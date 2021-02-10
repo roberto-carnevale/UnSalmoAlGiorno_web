@@ -12,7 +12,7 @@ function doGet(req) {
   }
   if (platform=="Web") {
     let dayObj = getLiturgicDay();
-    htmlProlog = "<font style='color:"+codeColor[dayObj.color]+"'><b>"+stringColorMailingList[dayObj.color]+"</b></font><br/>"+getdayFull().toString().replace(/###/g,"<br/>")+"<br/>";
+    htmlProlog = "<font style='color:"+codeColor[dayObj.color]+"'><b>"+stringColorMailingList[dayObj.color]+"</b></font><br/>"+getdayFull().toString().replace(/###/g,"<br/>")+"<br/><br/>Preghiamo!<br/>";
     htmlProlog += lastVerseFull().toString().replace(/###/g,"<br/>");
   }
   let htmlOutput = HtmlService.createHtmlOutput(htmlProlog);
