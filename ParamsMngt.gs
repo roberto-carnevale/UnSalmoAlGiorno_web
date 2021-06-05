@@ -3,7 +3,7 @@ function readParams() {
 }
 
 function getTwitterFollowers() {
-  return (parseInt(readParams().getRange("B5").getValue()));
+  return (parseInt(readParams().getRange("B5").getValue()) + parseInt(readParams().getRange("B15").getValue()));
 }
 
 function getTelegramSubcribers() {
@@ -11,7 +11,7 @@ function getTelegramSubcribers() {
 }
 
 function getFacebookLikes() {
-  return (parseInt(readParams().getRange("B6").getValue()));
+  return (parseInt(readParams().getRange("B6").getValue()) + parseInt(readParams().getRange("B14").getValue()));
 }
 
 function getCalendarData() {
